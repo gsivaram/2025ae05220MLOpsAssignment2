@@ -1,0 +1,32 @@
+[
+  {
+    "question_id": "Q1",
+    "subject": "Machine Learning",
+    "question": "What is overfitting in machine learning, and how can it be prevented?",
+    "expected_keywords": ["training data", "generaliz|generalis", "regulari", "cross-validation|cross validation", "unseen|new data"]
+  },
+  {
+    "question_id": "Q2",
+    "subject": "Computer Networks",
+    "question": "What is the difference between TCP and UDP?",
+    "expected_keywords": ["connection", "reliab", "order", "faster|speed|overhead", "stream|video|gaming|dns"]
+  },
+  {
+    "question_id": "Q3",
+    "subject": "Biology",
+    "question": "What is photosynthesis?",
+    "expected_keywords": ["sunlight|light", "carbon dioxide|co2", "water", "glucose|sugar", "oxygen", "chlorophyll"]
+  },
+  {
+    "question_id": "Q4",
+    "subject": "Algorithms",
+    "question": "What is the time complexity of binary search, and why?",
+    "expected_keywords": ["o(log n)|log n|logarithmic", "sorted", "half|halv", "middle|mid"]
+  },
+  {
+    "question_id": "Q5",
+    "subject": "Economics",
+    "question": "Explain the main causes and consequences of the 2008 global financial crisis.",
+    "expected_keywords": ["subprime|mortgage", "housing", "lehman", "derivative|securit|cdo|mortgage-backed", "recession", "bailout|regulation|dodd-frank"]
+  }
+]

@@ -1,0 +1,25 @@
+# Exact pins = same results environment on the lab VM and any other machine (Python 3.12).
+
+# LLM API clients (Gemini is the default provider; the others are optional switches)
+google-genai==2.34.0
+openai==3.41.0
+anthropic==2.3.0
+
+# Experiment tracking + Prompt Registry (needs MLflow 3.x)
+mlflow==3.17.2
+
+# Data handling and charts
+pandas==3.1.0
+numpy==2.5.4
+matplotlib==3.11.2
+
+# Secrets from .env
+python-dotenv==1.2.4
+
+# Notebook execution / export
+jupyter==1.1.1
+nbconvert==7.17.2
+ipykernel==7.4.0
+
+# Lint
+ruff==0.16.10
