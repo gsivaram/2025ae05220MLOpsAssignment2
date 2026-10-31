@@ -1,0 +1,6 @@
+question_id,prompt_version,model,start_time,end_time,latency_seconds,status,input_tokens,output_tokens,thinking_tokens,total_tokens,input_cost_usd,output_cost_usd,total_cost_usd,finish_reason,http_attempts
+Q1,v1,gemini-3.5-flash-lite,2026-10-31T00:57:08.795+00:00,2026-10-31T00:57:13.243+00:00,4.448,success,25,680,0,705,7.5e-06,0.0017000000000000001,0.0017075,STOP,1
+Q2,v1,gemini-3.5-flash-lite,2026-10-31T00:57:19.243+00:00,2026-10-31T00:57:22.888+00:00,3.645,success,20,566,0,586,6e-06,0.001415,0.001421,STOP,1
+Q3,v1,gemini-3.5-flash-lite,2026-10-31T00:57:28.888+00:00,2026-10-31T00:57:31.012+00:00,2.1238,success,15,208,0,223,4.5e-06,0.00052,0.0005244999999999999,STOP,1
+Q4,v1,gemini-3.5-flash-lite,2026-10-31T00:57:37.012+00:00,2026-10-31T00:57:40.969+00:00,3.9568,success,23,547,0,570,6.9e-06,0.0013674999999999998,0.0013743999999999998,STOP,1
+Q5,v1,gemini-3.5-flash-lite,2026-10-31T00:57:46.969+00:00,2026-10-31T00:57:50.794+00:00,3.825,success,28,844,0,872,8.4e-06,0.00211,0.0021184,STOP,1

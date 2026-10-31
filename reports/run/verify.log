@@ -1,0 +1,24 @@
+latency_tokens_cost.csv
+  [PASS] has all latency / token / cost columns
+  [PASS] 5 requests, all successful
+  [PASS] latency and token counts are positive
+  [PASS] total cost = input cost + output cost
+prompt_evaluation_results.csv
+  [PASS] rows v1, v2, v3
+  [PASS] has the 5 required metrics
+  [PASS] exactly one version recommended
+  [PASS] valid_json is a rate in [0, 1]
+MLflow experiment
+  [PASS] experiment 'eduassist_llmops_assignment' exists
+  [PASS] run for prompt v1 with the 5 required metrics
+  [PASS] run for prompt v2 with the 5 required metrics
+  [PASS] run for prompt v3 with the 5 required metrics
+  [PASS] promotion_decision run logged
+Prompt Registry
+  [PASS] 'eduassist-academic-qa' has versions 1-3 (found 3)
+  [PASS] every version has a commit message
+  [PASS] alias production -> recommended version (v3)
+Secret scan
+  [PASS] API key not found in 39 files
+
+VERIFY PASSED

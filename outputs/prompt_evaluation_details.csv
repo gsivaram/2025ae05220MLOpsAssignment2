@@ -1,0 +1,339 @@
+prompt_version,registry_version,question_id,model,start_time,end_time,latency_seconds,status,input_tokens,output_tokens,total_tokens,total_cost_usd,valid_json,schema_valid,keyword_coverage,finish_reason,mlflow_run_id,response_text
+v1,1,Q1,gemini-3.5-flash-lite,2026-10-31T00:58:28.124+00:00,2026-10-31T00:58:30.830+00:00,2.7054,success,25,736,761,0.0018475,False,False,1.0,STOP,8605af29d61345f9ab8b9ec63f6ebe62,"Here is a clear explanation of overfitting and how to prevent it, tailored for students learning machine learning.
+
+---
+
+### **What is Overfitting?**
+
+**Overfitting** happens when a machine learning model learns the training data *too well*. 
+
+Instead of learning the general underlying patterns, the model memorizes the specific details—including the noise, random fluctuations, and outliers—in the training set. 
+
+* **The Analogy:** Imagine a student who memorizes the exact answers to a specific set of practice math tests word-for-word, rather than learning the actual math formulas. When the teacher gives them a new test with slightly different numbers, the student fails because they don't actually understand the concepts; they just memorized the answers.
+* **The Result:** An overfitted model will have **extremely high accuracy on training data**, but **poor performance on new, unseen data** (test data or real-world data). It has lost its ability to generalize.
+
+---
+
+### **How Can Overfitting Be Prevented?**
+
+Machine learning engineers use several strategies to stop a model from overfitting:
+
+#### 1. **Get More Training Data**
+The simplest way to prevent overfitting is to feed the model more data. The more diverse examples the model sees, the harder it is to just memorize them, forcing the model to learn the true, general patterns.
+
+#### 2. **Use Train/Test Split and Cross-Validation**
+* **Train/Test Split:** Always divide your data. Train the model on a training set (e.g., 80% of the data) and evaluate it on a separate test set (e.g., 20%) that the model has never seen before. This tells you if the model is actually generalizing.
+* **Cross-Validation:** A technique (like $k$-fold cross-validation) where the data is split into multiple parts, and the model is trained and tested multiple times to ensure its performance is reliable.
+
+#### 3. **Simplify the Model (Regularization)**
+Complex models (like a deep neural network with millions of parameters) are more prone to overfitting. **Regularization** adds a penalty to the model for being too complex. Common techniques include:
+* **L1 and L2 Regularization:** Techniques that add a penalty to the loss function if the model's weights become too large.
+* **Dropout (for Neural Networks):** Randomly ""turning off"" a percentage of neurons during training so the network doesn't rely too heavily on any single pathway.
+
+#### 4. **Early Stopping**
+During training, the model's performance on a validation set is monitored after every epoch (iteration). Initially, both training and validation error go down. However, at a certain point, the model starts overfitting, and the validation error begins to *increase*. **Early stopping** means halting the training process right before the validation error starts to rise.
+
+#### 5. **Pruning (for Decision Trees)**
+Decision trees can grow very large and complex, fitting every tiny detail of the data. **Pruning** involves cutting off branches of the tree that provide little predictive power, keeping the tree simple and generalized.
+
+---
+
+### **Summary**
+* **Overfitting:** Memorizing the training data (including noise) instead of learning the general pattern. Leads to great training scores, but terrible real-world performance.
+* **Prevention:** Use more data, split your data properly, simplify the model (regularization), stop training early, or prune complex models."
+v1,1,Q2,gemini-3.5-flash-lite,2026-10-31T00:58:36.830+00:00,2026-10-31T00:58:39.303+00:00,2.4731,success,20,594,614,0.001491,False,False,1.0,STOP,8605af29d61345f9ab8b9ec63f6ebe62,"Both **TCP (Transmission Control Protocol)** and **UDP (User Datagram Protocol)** are core protocols used for sending data over the internet, but they do it in very different ways. 
+
+The main difference comes down to **reliability versus speed**: TCP is reliable and orderly, while UDP is fast and lightweight.
+
+Here is a breakdown of the key differences:
+
+---
+
+### 1. Connection Type
+*   **TCP is Connection-Oriented:** Before any data is sent, TCP establishes a formal connection between the sender and the receiver using a process called a ""three-way handshake."" 
+*   **UDP is Connectionless:** UDP just fires data off to the receiver without checking if the receiver is ready, listening, or even online. It is often described as ""fire-and-forget.""
+
+### 2. Reliability and Error Checking
+*   **TCP guarantees delivery:** If a packet of data gets lost along the way, TCP detects the loss and asks the sender to retransmit it. It also ensures data arrives in the correct, sequential order.
+*   **UDP does not guarantee delivery:** If a packet is lost, UDP doesn't care, and it won't try to recover it. Packets may also arrive completely out of order.
+
+### 3. Speed
+*   **TCP is slower:** Because it requires setting up a connection, checking for errors, and waiting for delivery confirmations, TCP introduces latency (delay).
+*   **UDP is faster:** Without the overhead of checking for lost packets or maintaining a connection, UDP is able to transmit data much quicker.
+
+---
+
+### Comparison Summary Table
+
+| Feature | TCP (Transmission Control Protocol) | UDP (User Datagram Protocol) |
+| :--- | :--- | :--- |
+| **Reliability** | High (guarantees data delivery) | Low (no delivery guarantees) |
+| **Speed** | Slower (due to error-checking) | Faster (minimal overhead) |
+| **Ordering** | Ensures packets arrive in order | Packets may arrive out of order |
+| **Connection** | Connection-oriented (Handshake required) | Connectionless |
+| **Common Use Cases** | Web browsing (HTTP/HTTPS), Email (SMTP), File transfers (FTP) | Live streaming, Online gaming, Voice/Video calls (VoIP), DNS |
+
+---
+
+### Real-World Analogy
+
+*   **TCP is like sending a registered letter in the mail.** You ensure the recipient is home, they have to sign for the letter to prove they got it, and if the post office loses a page, they send a replacement.
+*   **UDP is like shouting across a crowded room.** You just start talking. Some people might not hear every word (lost data), and the sentences might get jumbled up, but the message gets across immediately without pausing."
+v1,1,Q3,gemini-3.5-flash-lite,2026-10-31T00:58:45.304+00:00,2026-10-31T00:58:46.655+00:00,1.3516,success,15,281,296,0.000707,False,False,1.0,STOP,8605af29d61345f9ab8b9ec63f6ebe62,"**Photosynthesis** is the process used by plants, algae, and some bacteria to convert sunlight into usable chemical energy. 
+
+In simple terms, it is how plants make their own ""food."" 
+
+To perform photosynthesis, a plant needs three main ingredients:
+1. **Sunlight** (absorbed by a green pigment called chlorophyll in the leaves)
+2. **Water** ($H_2O$, absorbed through the roots)
+3. **Carbon dioxide** ($CO_2$, taken in from the air)
+
+The plant uses the energy from the sunlight to chemically combine the water and carbon dioxide. This process produces two things:
+* **Glucose** (a type of sugar): The plant uses this as food to grow and survive.
+* **Oxygen** ($O_2$): The plant releases this gas back into the air as a byproduct, which is what humans and animals breathe.
+
+**The basic chemical equation for photosynthesis is:**
+$$\text{Sunlight} + 6\text{CO}_2 \text{ (Carbon Dioxide)} + 6\text{H}_2\text{O} \text{ (Water)} \rightarrow \text{C}_6\text{H}_{12}\text{O}_6 \text{ (Glucose)} + 6\text{O}_2 \text{ (Oxygen)}$$"
+v1,1,Q4,gemini-3.5-flash-lite,2026-10-31T00:58:52.655+00:00,2026-10-31T00:58:54.675+00:00,2.0197,success,23,561,584,0.0014093999999999999,False,False,1.0,STOP,8605af29d61345f9ab8b9ec63f6ebe62,"The time complexity of binary search is **$O(\log n)$** (logarithmic time), where $n$ is the number of elements in the sorted array. 
+
+Here is why:
+
+### 1. How Binary Search Works
+Binary search is a divide-and-conquer algorithm. Instead of looking at every element one by one (like linear search), it looks at the **middle** element of a *sorted* array:
+* If the target is equal to the middle element, the search is finished.
+* If the target is less than the middle element, it eliminates the right half of the array and repeats the process on the left half.
+* If the target is greater than the middle element, it eliminates the left half and repeats the process on the right half.
+
+### 2. The Mathematical ""Why""
+With each step (or comparison) you make, **the size of the search space is cut in half**. 
+
+Let’s trace a worst-case scenario where we have $n$ elements. After each step, the number of elements remaining to search is:
+* **Start:** $n$ elements
+* **Step 1:** $\frac{n}{2}$ elements
+* **Step 2:** $\frac{n}{4}$ elements (which is $\frac{n}{2^2}$)
+* **Step 3:** $\frac{n}{8}$ elements (which is $\frac{n}{2^3}$)
+* $\dots$
+* **Step $k$:** $\frac{n}{2^k}$ elements
+
+The search ends when we are left with $1$ element (or 0, meaning it's not found). So, we can set up the equation:
+$$\frac{n}{2^k} = 1$$
+
+To find the number of steps ($k$), we multiply both sides by $2^k$:
+$$n = 2^k$$
+
+Next, we take the logarithm base 2 of both sides:
+$$k = \log_2(n)$$
+
+### Summary
+Because the number of steps required to find the element grows proportionally to the **base-2 logarithm** of the input size ($n$), the time complexity is **$O(\log n)$**. 
+
+To put this in perspective: if your array size increases from 1,000 items to 1,000,000 items (1,000 times larger), a linear search might take 1,000 times longer, but binary search will only take about **10 extra steps** ($\log_2$ of 1,000 is roughly 10)."
+v1,1,Q5,gemini-3.5-flash-lite,2026-10-31T00:59:00.675+00:00,2026-10-31T00:59:04.300+00:00,3.625,success,28,867,895,0.0021759,False,False,1.0,STOP,8605af29d61345f9ab8b9ec63f6ebe62,"The **2008 Global Financial Crisis** was the worst economic downturn since the Great Depression of the 1930s. It originated in the United States housing market and quickly spread into a worldwide banking and economic crisis. 
+
+Here is a clear breakdown of its main causes and consequences.
+
+---
+
+### **Main Causes**
+
+1. **The U.S. Housing Bubble and Subprime Mortgages**
+   * Throughout the early 2000s, U.S. housing prices soared, encouraging people to buy homes.
+   * Banks began issuing **subprime mortgages**—loans given to borrowers with poor credit histories who posed a high risk of defaulting. Lenders assumed housing prices would keep rising, so even if borrowers failed to pay, the banks could just repossess and sell the homes at a profit.
+
+2. **MBS (Mortgage-Backed Securities) and Securitization**
+   * Investment banks bought thousands of these individual mortgages, bundled them together into financial products called Mortgage-Backed Securities (MBS), and sold them to investors around the world.
+   * Rating agencies (like Moody’s and S&P) mistakenly gave these risky bundles top-tier ""AAA"" safety ratings, misleading investors into thinking they were safe investments.
+
+3. **Lack of Regulation (Deregulation)**
+   * Financial deregulation in the 1990s and 2000s allowed banks to take massive risks with minimal government oversight. 
+   * A key moment was the 1999 repeal of the Glass-Steagall Act, which had previously separated commercial banking (safe, everyday banking) from investment banking (risky trading).
+
+4. **Excessive Leverage (Borrowed Money)**
+   * Financial institutions borrowed heavily to buy more mortgage-backed securities. Many banks had $30 or $40 of debt for every $1 of their own capital. When the market turned, they were leveraged to a dangerous degree.
+
+5. **The Trigger: Housing Market Collapse**
+   * By 2006, housing prices peaked and began to fall as the supply of homes exceeded demand. 
+   * When ""adjustable-rate mortgages"" reset to higher monthly payments, millions of subprime borrowers could no longer pay. Foreclosures skyrocketed, housing prices crashed, and the value of mortgage-backed securities plummeted to near zero.
+
+---
+
+### **Main Consequences**
+
+1. **Collapse of Major Financial Institutions**
+   * In September 2008, investment banking giant **Lehman Brothers collapsed**, filing for bankruptcy because it held billions in worthless mortgage assets. Other major institutions (like American International Group [AIG], Merrill Lynch, and Bear Stearns) faced total ruin and were only saved because governments stepped in.
+
+2. **Global Credit Freeze**
+   * Terrified that other banks might collapse and unable to determine which banks were solvent, financial institutions stopped lending money to each other. The ""interbank lending market"" froze, making it impossible for businesses and consumers to get normal loans.
+
+3. **The ""Great Recession""**
+   * The financial crisis triggered a severe global economic recession. Millions of people lost their jobs, businesses went bankrupt, and global stock markets crashed (losing roughly half their value).
+   * In the U.S. alone, millions of people lost their homes to foreclosure, and the unemployment rate doubled to 10%.
+
+4. **Government Bailouts and National Debt**
+   * Governments worldwide were forced to launch massive rescue packages to save the global financial system. The U.S. passed the **Troubled Asset Relief Program (TARP)**, injecting hundreds of billions of dollars into failing banks (leading to the famous phrase *""too big to fail""*). 
+   * These bailouts averted a total economic depression, but they drastically increased national debts.
+
+5. **New Financial Regulations**
+   * To prevent a recurrence, governments implemented stricter regulations. In the U.S., Congress passed the **Dodd-Frank Act (2010)**, which imposed stricter capital requirements on banks, created consumer protection agencies, and subjected financial institutions to annual ""stress tests."""
+v2,2,Q1,gemini-3.5-flash-lite,2026-10-31T00:59:23.051+00:00,2026-10-31T00:59:24.968+00:00,1.9177,success,49,420,469,0.0010647000000000002,False,False,1.0,STOP,f513d55d4ee74162afd4be6fde7db8c8,"**What is Overfitting?**
+
+Overfitting happens when a machine learning model learns the training data *too well*. Instead of learning the general underlying patterns, it memorizes the specific details and even the random noise in the training set. 
+
+As a result, while the model performs brilliantly on the data it was trained on, it fails to perform well on new, unseen data (poor generalization). 
+
+* **Analogy:** Think of a student who memorizes exact practice test questions word-for-word instead of learning the actual concepts. When the real exam has slightly different questions, the student fails.
+
+---
+
+**How to Prevent Overfitting**
+
+Here are the most common ways to prevent overfitting:
+
+1. **Use More Training Data:** 
+   Providing the model with more diverse data helps it learn the true underlying patterns rather than getting distracted by noise.
+
+2. **Simplify the Model (Regularization):** 
+   Complex models (like deep neural networks with many parameters) easily overfit. Techniques like **L1 and L2 regularization** add a penalty for overly complex models, forcing them to keep their rules simple.
+
+3. **Cross-Validation:** 
+   Instead of using just one train-test split, use a technique like $k$-fold cross-validation. This splits your data into multiple parts to ensure the model's performance is consistent across different subsets of data.
+
+4. **Early Stopping:** 
+   When training an iterative model (like a neural network), monitor its performance on a validation set. Stop training the exact moment the error on the validation set starts to increase, even if the training error is still decreasing.
+
+5. **Dropout (for Neural Networks):** 
+   Randomly ""turn off"" a percentage of neurons during the training process. This prevents the network from relying too heavily on any single neuron and forces it to learn robust features.
+
+6. **Feature Selection:** 
+   Remove irrelevant or redundant inputs (features) so the model has fewer chances to find false correlations."
+v2,2,Q2,gemini-3.5-flash-lite,2026-10-31T00:59:30.969+00:00,2026-10-31T00:59:32.827+00:00,1.8583,success,44,386,430,0.0009782,False,False,1.0,STOP,f513d55d4ee74162afd4be6fde7db8c8,"Both TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are methods used to send data over the internet, but they do it in very different ways. 
+
+Here is the difference broken down into three main points:
+
+1. **Reliability (Checking for Errors):**
+   * **TCP is reliable.** Before it sends data, it establishes a connection with the receiver. It makes sure every single piece of data (packet) arrives safely and in the correct order. If a piece is lost, TCP asks for it to be sent again. 
+   * **UDP is fast, but unreliable.** It simply fires data off to the receiver without checking if it arrived or if it’s in the correct order. It does not try to recover lost data.
+
+2. **Speed:**
+   * **TCP is slower** because of the extra time it takes to set up the connection and check for missing data.
+   * **UDP is faster** because it doesn't waste time on confirmations or error-checking. 
+
+3. **Common Uses:**
+   * **TCP** is used when accuracy is more important than speed. Examples include sending emails, browsing websites (HTTP), and transferring files. You wouldn't want a downloaded file or a webpage to be missing pieces.
+   * **UDP** is used when speed is more important than a few lost pieces of data. Examples include live video streaming, online gaming, and voice calls (like Zoom or VoIP), where a momentary glitch is better than a frustrating delay.
+
+**Summary Analogy:** 
+* **TCP** is like sending a **certified letter** in the mail; you get a receipt confirming the person received it.
+* **UDP** is like shouting an **announcement through a megaphone**; you get the message out quickly, but you have no way of knowing who actually heard it."
+v2,2,Q3,gemini-3.5-flash-lite,2026-10-31T00:59:38.827+00:00,2026-10-31T00:59:40.180+00:00,1.3525,success,39,232,271,0.0005917,False,False,1.0,STOP,f513d55d4ee74162afd4be6fde7db8c8,"**Photosynthesis** is the chemical process that plants, algae, and some bacteria use to turn sunlight into food. 
+
+During this process, organisms take in three main things from their environment:
+1. **Sunlight** (absorbed by a green pigment called chlorophyll)
+2. **Water** ($H_2O$, absorbed through the roots)
+3. **Carbon dioxide** ($CO_2$, taken in from the air)
+
+Using the energy from the sunlight, they convert these ingredients into two products:
+1. **Glucose** ($C_6H_{12}O_6$), a simple sugar that the plant uses as food for energy and growth.
+2. **Oxygen** ($O_2$), which is released into the air as a byproduct.
+
+**In short:** Photosynthesis is how nature uses solar energy to make food and oxygen, making life on Earth possible. 
+
+*Chemical equation:* 
+$6CO_2 + 6H_2O + \text{Sunlight} \rightarrow C_6H_{12}O_6 + 6O_2$"
+v2,2,Q4,gemini-3.5-flash-lite,2026-10-31T00:59:46.180+00:00,2026-10-31T00:59:47.823+00:00,1.6425,success,47,268,315,0.0006841,False,False,1.0,STOP,f513d55d4ee74162afd4be6fde7db8c8,"The time complexity of binary search is **$O(\log n)$** (logarithmic time). 
+
+Here is why:
+
+1. **How it works:** Binary search only works on sorted data. In each step, it looks at the middle element of the list. 
+2. **Eliminating half the data:** If the middle element isn't the one you're looking for, the algorithm compares your target to it. Because the list is sorted, it can instantly eliminate **half** of the remaining elements.
+3. **Counting the steps:** Let’s say you have a list of $n$ items. 
+   * After 1 step, $n/2$ items remain.
+   * After 2 steps, $n/4$ items remain.
+   * After $k$ steps, $n/2^k$ items remain.
+
+The search ends when you are down to 1 item (so, $n/2^k = 1$). If you solve for $k$ (the number of steps), you get $k = \log_2 n$. 
+
+In computer science, we drop the base 2 and simply call this **$O(\log n)$**. This makes binary search extremely fast, even for very large datasets."
+v2,2,Q5,gemini-3.5-flash-lite,2026-10-31T00:59:53.823+00:00,2026-10-31T00:59:56.706+00:00,2.8835,success,52,576,628,0.0014556,False,False,1.0,STOP,f513d55d4ee74162afd4be6fde7db8c8,"Here is a clear and concise breakdown of the main causes and consequences of the 2008 global financial crisis, tailored for undergraduate students.
+
+---
+
+### **Main Causes**
+
+1. **The U.S. Housing Bubble and Subprime Mortgages**
+   * **What happened:** Banks gave out ""subprime"" mortgages—loans to people with poor credit histories or low incomes who could not typically afford them. 
+   * **The bubble:** Housing prices kept rising, so lenders assumed that even if borrowers defaulted, the houses could just be resold for a profit. When the housing market peaked in 2006–2007, prices collapsed, and borrowers began defaulting en masse.
+
+2. **MBSs, CDWs, and Financial Engineering**
+   * **What happened:** Wall Street banks bundled thousands of these risky mortgages together into complex financial products called **Mortgage-Backed Securities (MBSs)** and **Collateralized Debt Obligations (CDOs)** and sold them to investors worldwide.
+   * **The flaw:** Rating agencies falsely labeled many of these toxic products as ""safe"" (AAA-rated), meaning global investors bought them without realizing the massive risk involved.
+
+3. **Excessive Leverage and Lack of Regulation**
+   * Financial institutions borrowed huge amounts of money to buy these investments (known as high **leverage**), meaning they had very little financial cushion if things went wrong. 
+   * A lack of government oversight in the ""shadow banking system"" (unregulated financial markets) allowed this risky behavior to go unchecked.
+
+---
+
+### **Main Consequences**
+
+1. **The Credit Freeze and Collapse of Major Institutions**
+   * When the housing market crashed, the value of MBSs plummeted. Banks stopped trusting each other and **froze lending**, meaning businesses could not get loans for payroll, and consumers could not get credit.
+   * Major financial giants—most notably **Lehman Brothers**—went bankrupt, while others (like AIG) had to be rescued by government bailouts.
+
+2. **The Great Recession**
+   * The financial crisis triggered the worst economic downturn since the Great Depression, known as the **Great Recession**. 
+   * Millions of people worldwide lost their jobs, their life savings, and their homes to foreclosure.
+
+3. **Government Intervention and New Regulations**
+   * Governments and central banks (like the U.S. Federal Reserve) had to step in with massive economic stimulus packages and drop interest rates to historic lows to save the global financial system.
+   * In 2010, the U.S. passed the **Dodd-Frank Act** (and similar regulations were adopted globally) to impose stricter rules on banks, increase transparency, and prevent a future collapse."
+v3,3,Q1,gemini-3.5-flash-lite,2026-10-31T01:00:09.809+00:00,2026-10-31T01:00:11.183+00:00,1.3734,success,90,177,267,0.0004695,True,True,1.0,STOP,a1b144870092474c971cb95ff931b762,"{
+  ""answer"": ""Overfitting in machine learning occurs when a model learns the training data too well, capturing noise and random fluctuations rather than the underlying pattern, which leads to poor generalization on unseen data. It can be prevented by techniques such as using more training data, data augmentation, simplifying the model, applying regularization (like L1 or L2), using cross-validation, and implementing early stopping during training."",
+  ""confidence"": ""high"",
+  ""key_points"": [
+    ""Model learns training noise and specific details instead of general patterns."",
+    ""Results in poor performance on unseen test data."",
+    ""Prevented using regularization techniques (L1/L2)."",
+    ""Prevented by acquiring more training data or using data augmentation."",
+    ""Prevented through cross-validation and early stopping.""
+  ]
+}"
+v3,3,Q2,gemini-3.5-flash-lite,2026-10-31T01:00:17.183+00:00,2026-10-31T01:00:18.541+00:00,1.358,success,85,146,231,0.0003905,True,True,1.0,STOP,a1b144870092474c971cb95ff931b762,"{
+  ""answer"": ""TCP is a connection-oriented, reliable protocol that guarantees delivery and maintains packet order through error checking and retransmission, making it ideal for applications where data integrity is crucial. UDP is a connectionless, unreliable protocol that does not guarantee delivery or packet order, offering lower overhead and faster transmission suitable for real-time applications like streaming or gaming."",
+  ""confidence"": ""high"",
+  ""key_points"": [
+    ""TCP is connection-oriented and reliable; UDP is connectionless and best-effort."",
+    ""TCP guarantees delivery and ordering; UDP does not."",
+    ""TCP has higher overhead and latency; UDP is faster with lower overhead.""
+  ]
+}"
+v3,3,Q3,gemini-3.5-flash-lite,2026-10-31T01:00:24.541+00:00,2026-10-31T01:00:25.760+00:00,1.2186,success,80,117,197,0.0003165,True,True,0.8333333333333334,STOP,a1b144870092474c971cb95ff931b762,"{
+  ""answer"": ""Photosynthesis is the biological process used by plants, algae, and some bacteria to convert light energy, usually from the sun, into chemical energy in the form of glucose, using carbon dioxide and water while releasing oxygen as a byproduct."",
+  ""confidence"": ""high"",
+  ""key_points"": [
+    ""Converts light energy into chemical energy"",
+    ""Used by plants, algae, and some bacteria"",
+    ""Consumes carbon dioxide and water"",
+    ""Produces glucose and releases oxygen""
+  ]
+}"
+v3,3,Q4,gemini-3.5-flash-lite,2026-10-31T01:00:31.760+00:00,2026-10-31T01:00:32.861+00:00,1.1006,success,88,112,200,0.00030639999999999997,True,True,0.75,STOP,a1b144870092474c971cb95ff931b762,"{
+  ""answer"": ""The time complexity of binary search is O(log n) because the algorithm repeatedly divides the search interval in half with each step, meaning the number of elements to search is halved in each iteration."",
+  ""confidence"": ""high"",
+  ""key_points"": [
+    ""Time complexity is logarithmic, specifically O(log n)."",
+    ""It requires a sorted dataset to function correctly."",
+    ""With each comparison, the search space is reduced by 50%.""
+  ]
+}"
+v3,3,Q5,gemini-3.5-flash-lite,2026-10-31T01:00:38.861+00:00,2026-10-31T01:00:40.426+00:00,1.5652,success,93,202,295,0.0005329,True,True,1.0,STOP,a1b144870092474c971cb95ff931b762,"{
+  ""answer"": ""The 2008 global financial crisis was primarily caused by the US housing market bubble, fueled by predatory subprime mortgage lending and the widespread securitization of these risky loans into complex financial instruments like mortgage-backed securities and collateralized debt obligations. When the housing bubble burst, it triggered a liquidity crisis, the collapse of major financial institutions such as Lehman Brothers, and a severe global recession characterized by soaring unemployment, credit freezes, and massive government bailouts."",
+  ""confidence"": ""high"",
+  ""key_points"": [
+    ""Prolonged low interest rates and a US housing market bubble"",
+    ""Proliferation of high-risk subprime mortgages and predatory lending"",
+    ""Securitization and distribution of toxic assets through complex financial derivatives"",
+    ""Failure and near-collapse of major financial institutions like Lehman Brothers"",
+    ""Severe global economic recession, high unemployment, and unprecedented government bailouts""
+  ]
+}"

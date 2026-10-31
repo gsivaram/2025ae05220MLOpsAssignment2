@@ -1,0 +1,7 @@
+statistic,latency_seconds
+count,5.0
+mean,3.6
+median,3.825
+min,2.124
+max,4.448
+std (sample),0.877
