@@ -11,6 +11,7 @@ three prompt versions are registered, evaluated and promoted in the **MLflow Pro
 | Notebook (executable, all tasks) | [`notebooks/EduAssist_LLMOps_Assignment2.ipynb`](notebooks/EduAssist_LLMOps_Assignment2.ipynb) · HTML export in `reports/` |
 | CSV outputs | [`outputs/latency_tokens_cost.csv`](outputs/latency_tokens_cost.csv) · [`outputs/prompt_evaluation_results.csv`](outputs/prompt_evaluation_results.csv) |
 | Lab run evidence | [`reports/run/run_summary.md`](reports/run/run_summary.md) · [`screenshots/`](screenshots/) |
+| Final report | [`reports/MLOps_Assignment2_Report_2025ae05220.pdf`](reports/MLOps_Assignment2_Report_2025ae05220.pdf) |
 | Lab procedure | [`LAB_RUNBOOK.md`](LAB_RUNBOOK.md) |
 
 ## Phase-wise approach
