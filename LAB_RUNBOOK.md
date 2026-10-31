@@ -37,13 +37,18 @@ conda activate base && python --version     # must be 3.12.x
 python -m venv .venv
 conda deactivate
 source .venv/bin/activate && python --version   # still 3.12.x, prompt shows (.venv)
-pip install --upgrade pip
-pip install -r requirements.txt
+python -m pip --version                     # path must contain .venv, not python3.9
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 ```
+
+Always use `python -m pip`: on the lab VM a bare `pip` can resolve to the system Python 3.9 even with
+the venv active, and then `google-genai` fails to install. If `python -m pip` reports `No module named
+pip`, run `python -m ensurepip --upgrade` first.
 
 Every new terminal: `cd ~/workspace/2025ae05220MLOpsAssignment2 && source .venv/bin/activate`.
 
-Behind a proxy: add `--proxy http://host:port` to the `pip` commands and `export HTTPS_PROXY=http://host:port`
+Behind a proxy: add `--proxy http://host:port` to the `python -m pip` commands and `export HTTPS_PROXY=http://host:port`
 before running the notebook.
 
 ## 3. Provide the API key (never committed)

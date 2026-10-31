@@ -30,11 +30,12 @@ three prompt versions are registered, evaluated and promoted in the **MLflow Pro
 
 | | |
 |---|---|
-| Provider / model | Google Gemini API, `gemini-2.5-flash` (thinking disabled, temperature 0, max 2,048 output tokens) |
+| Provider / model | Google Gemini API, `gemini-3.5-flash-lite` (thinking at its default `minimal` level, temperature 0, max 2,048 output tokens) |
 | API version | Gemini API `v1beta` via `google-genai` 2.34.0 |
-| Pricing | $0.30 input / $2.50 output per 1M tokens, paid Standard tier — [ai.google.dev/gemini-api/docs/pricing](https://ai.google.dev/gemini-api/docs/pricing), page dated **2026-10-28** |
+| Pricing | $0.30 input / $2.50 output per 1M tokens, paid Standard tier — [ai.google.dev/gemini-api/docs/pricing](https://ai.google.dev/gemini-api/docs/pricing), page dated **2026-10-30** |
 | Currency | USD |
 | Billing note | calls run on the free tier ($0 billed); all costs are what the same traffic costs on the paid tier |
+| Model choice | Gemini 2.5 access is limited to accounts that used it before, so new API keys get HTTP 404; Google recommends 3.5 Flash-Lite for new projects ([deprecations](https://ai.google.dev/gemini-api/docs/deprecations)) |
 
 Other providers can be switched in with `LLM_PROVIDER` = `openai` | `anthropic` | `ollama`
 (local open-source model, cost estimated from a comparable hosted price — brief, section 7).
@@ -51,7 +52,7 @@ Other providers can be switched in with `LLM_PROVIDER` = `openai` | `anthropic` 
 |---|---|---|---|
 | `GEMINI_API_KEY` | yes | – | Gemini API key (never hard-coded, never printed) |
 | `LLM_PROVIDER` | no | `gemini` | `gemini` / `openai` / `anthropic` / `ollama` |
-| `LLM_MODEL` | no | `gemini-2.5-flash` | model id |
+| `LLM_MODEL` | no | `gemini-3.5-flash-lite` | model id |
 | `REQUEST_INTERVAL_SECONDS` | no | `6` | pause between calls (free-tier rate limit) |
 | `MLFLOW_TRACKING_URI` | no | `sqlite:///mlflow.db` | MLflow store (SQLite needed for the Prompt Registry) |
 
@@ -79,7 +80,7 @@ Lab VM specifics (conda Python, screenshots, committing results) are in [`LAB_RU
   records status, HTTP attempts and finish reason, and retries 429/5xx with exponential back-off.
 * **Task 2** — tokens from the response (`prompt_token_count`, `candidates_token_count`, `thoughts_token_count`),
   cost = tokens / 1,000,000 × price, monthly = average × 10,000, plus a what-if table (shorter answers,
-  Flash-Lite routing) behind the recommendation.
+  3.1 Flash-Lite routing) behind the recommendation.
 * **Task 3** — experiment `eduassist_llmops_assignment`; prompt `eduassist-academic-qa` versions 1–3 registered
   with commit messages (idempotent on re-run); each version runs in its own MLflow run with the prompt loaded
   from the registry; `mlflow.genai.evaluate()` scores every response with `valid_json`, `schema_valid` and

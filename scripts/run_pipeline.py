@@ -75,7 +75,7 @@ def environment() -> dict[str, str]:
         "Python": f"{platform.python_version()} at {PY}",
         "Git commit": commit,
         "LLM provider": provider,
-        "LLM model": os.getenv("LLM_MODEL", "gemini-2.5-flash" if provider == "gemini" else "(provider default)"),
+        "LLM model": os.getenv("LLM_MODEL", "gemini-3.5-flash-lite" if provider == "gemini" else "(provider default)"),
         "API key": "set (hidden)" if any(os.getenv(k) for k in KEY_VARS.get(provider, [])) else "not set",
         "Started": datetime.now().astimezone().isoformat(timespec="seconds"),
         **{f"pkg {p}": version(p) for p in PACKAGES},
